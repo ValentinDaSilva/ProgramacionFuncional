@@ -1,6 +1,6 @@
 #lang racket
 
-; obtener todos los atomos de una lista
+; obtener todos los atomos de una lista, considerando que puede tener sublistas adentro
 
 (define (listarAtomos lista)
     (cond
