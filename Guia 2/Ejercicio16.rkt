@@ -1,6 +1,3 @@
-#lang racket
-; crear un arbol binario
-
 (define vacio '())
 
 (define (hoja x)
@@ -24,10 +21,21 @@
        (list raiz izq der)
 )
 
-
 (define (der lista)
       (caddr lista)
-  )
+)
+
 (define (izq lista)
       (cadr lista)
-  )
+)
+
+(define (pertenece arbol elemento)
+    (cond 
+        ((vacio? arbol) #f)
+        ((equal? (car arbol) elemento) #t)
+        (else 
+            (or (pertenece (izq arbol) elemento) (pertenece (der arbol) elemento))
+        )
+    )
+)
+(define arbol (crear-arbol 1 (crear-arbol 2 (hoja 4) (hoja 5)) (crear-arbol 3 (hoja 6) (hoja 7))))
