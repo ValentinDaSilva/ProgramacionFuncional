@@ -1,0 +1,31 @@
+Ejercicio 5
+Resolver las siguientes sustituciones.
+1. [λu.(y x) / x] (x x)
+    (λu.(y x) λu.(y x))
+2. [λt.t / y] λr.(y t)
+    λr.[λt.t / y](y t)
+    λr.(λt.t t)
+3. [u / x] λu.(x λy.y)
+    λu. (u λy.y)
+4. [λy.(y x) / x] λu.x
+    λu.λy.(y x)
+5. [λx.λx.(x x) / x] λx.x
+    λx.λx.(x x)
+6. [(t λu.t) / y] λu.λt.y
+    λu.[(t λu.t) / y] λt.y
+    λu.λt(t λu.t)
+7. [λt.t / x] λx.(t y)
+    (t y)
+8. [(r λu.u) / x] λu.λr.(t x)
+   λu.λr.(t (r λu.u))
+9. [λh.(x λu.u) / t] λx.λu.λz.(x (h t))
+    λw.[λh.(x λu.u) / t][w/x] λu.λz.(x (h t))
+    λw.[λh.(x λu.u) / t]λu.λz.[w/x](x (h t))
+    λw.[λh.(x λu.u) / t]λu.λz.(w (h t))
+    λw.λu.λz.[λh.(x λu.u) / t](w (h t))
+    λw.λu.λz.(w (h [λh.(x λu.u) / t]t))
+    λw.λu.λz.(w (h λh.(x λu.u)))
+10. [λz.(z λz.z) / z]λu.λy.z
+    λu.λy.[λz.(z λz.z) / z]z
+    λu.λy.λz.(z λz.z)
+    

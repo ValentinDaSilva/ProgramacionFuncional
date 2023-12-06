@@ -1,0 +1,15 @@
+Ejercicio 4
+Especificar que términos están en su forma normal.
+1. (λx.(x t) y)
+2. (t λy.(y y))
+3. (t (r (λx.λx.(x x) t)))
+4. (λx.(x r) λt.(t t))
+5. (t (u (r w)))
+6. λx.(t (y λx.(u x)))
+7. λr.(r λr.r)
+8. ((λw.w λx.x) t)
+9. (t λr.r)
+10. (r (λx.t λx.u))
+
+* La forma normal es aquella en la que no hay ningun redex
+

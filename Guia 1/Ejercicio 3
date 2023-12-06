@@ -1,0 +1,20 @@
+Indicar cuales de los siguientes términos son Redex*.
+1. (x λx.(x x))
+    No
+2. (λx.x λx.x)
+    Si   
+3. (x (t λx.(x t)))
+    No
+4. (λx.λy.(x y) (λt.(t t) (u u)))
+    Si
+5. (t λx.(x t))
+    Si
+6. (λx.λx.λx.λx.(x (t x)) y)
+    Si
+7. (y (t λx.(t t)))
+    No
+8. (y (t y))
+    No
+    
+* Error en el enunciado, en ves de aplicaciones funcionales va Redex
+* Redex es un termino al cual no puede ser aplicado la regla Beta.

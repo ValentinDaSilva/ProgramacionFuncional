@@ -1,0 +1,21 @@
+Indicar cuales son términos válidos del cálculo lambda.
+1. (λx.λx.(x x) λy.(y (x (x x))) (x t))
+    falso, tres terminos
+2. λw.λw.λw.(λx.w w)
+    veradero.
+3. (λy.(y λx.x) λt.t w)
+    falso, tres terminos
+4. (w (t r))
+    verdadero
+5. λy.(r (λx.(x t) λx.(x x)))
+   verdadero
+6. (λx.λx.λx(x (x x)) λx.λx.x)
+    verdadero
+7. ((λq.q λx.(x x)) (t t))
+    verdadero
+8. (((λr.λx.(x r) t) λu.u) (t t))
+    verdadero
+9. (g (λg.(g (λx.x))))
+    verdadero
+10. (x (x λu.(u (λu.u))))
+    verdadero

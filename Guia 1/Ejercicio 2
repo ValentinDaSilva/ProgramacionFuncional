@@ -1,0 +1,31 @@
+Para cada termino, determinar el tipo de ocurrencia (libre o ligada) de cada variable del mismo.
+1. λt.(x (λy.x w))
+   Ligadas -> t , y
+   Libres -> x(2), w
+2. λx.λy.(x t)
+   Ligadas -> x , y 
+   Libres -> t
+3. (x (t (λx.(t t) w)))
+   Ligadas -> x   
+   Libres -> x t(3) w 
+4. (λf.(f (x λx.(f f))) (t λy.(x x)))
+   Ligadas -> f , x , y   
+   Libres -> f(2), x(3) , t . 
+5. λx.λt.λf.(t (f x))
+   Ligadas -> x(2) , t , f(2)
+   Libres -> ninguna
+6. (λx.(c v) x)
+   Ligadas -> x 
+   Libres -> x, c, v
+7. (x λx.(c v))
+   Ligadas -> x 
+   Libres -> x, c , v
+8. (λx.(t y) λt.λy(x x))
+   Ligadas -> x , t, y 
+   Libres -> x(2), t, y
+9. (λr.λr.(r (q λx.(w w))) λw.x)
+   Ligadas -> r(2), x, r, w    
+   Libres -> w(2), q, x
+10. λy.λw.λx.(x (w (λx.(i p) y)))
+   Ligadas -> y(2), w(2), x(3), 
+   Libres -> i, p 
