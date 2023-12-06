@@ -1,15 +1,22 @@
 Ejercicio 4
-Especificar que términos están en su forma normal.
+Especificar que tÃ©rminos estÃ¡n en su forma normal.
 1. (λx.(x t) y)
+    No
 2. (t λy.(y y))
+    Si
 3. (t (r (λx.λx.(x x) t)))
+    No
 4. (λx.(x r) λt.(t t))
+    No
 5. (t (u (r w)))
+    Si
 6. λx.(t (y λx.(u x)))
+    Si
 7. λr.(r λr.r)
+    Si
 8. ((λw.w λx.x) t)
+    No
 9. (t λr.r)
+    Si
 10. (r (λx.t λx.u))
-
-* La forma normal es aquella en la que no hay ningun redex
-
+    No
