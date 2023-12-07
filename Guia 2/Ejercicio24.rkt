@@ -14,7 +14,7 @@
      )
 )
 
-(define lista '(3(1(2)))
+(define lista '(3(1(2))))
 
 (define (eliminarUltimoElemento lista)
 (if (null? (cdr lista))
