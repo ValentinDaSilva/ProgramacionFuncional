@@ -24,7 +24,7 @@
         (; si no es igual
          if(pair? lista)
             (cons (car lista) (sust (cdr lista) patron1 patron2))
-            "falso"
+            "fallo"
         )
     )
      
