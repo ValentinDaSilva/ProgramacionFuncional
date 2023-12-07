@@ -1,0 +1,33 @@
+#lang racket
+
+(define (primeralista lista)
+    (define x (if (and (not (null? (cadr lista))) (not(null? (car lista)))) (cons (car (car lista)) (cons (car (car (cdr lista))) '() )) #f))
+    (if (and (not(null? (car lista))) (not (equal? x #f)))
+                           (cons x (primeralista (eliminarPrimerDeUltima lista)))
+                           '()
+                       )
+  )
+(define (productoPolinomico lista)
+    (cond
+      ((null? (cddr lista)) (productoPolinomicoSimple lista))
+      (else (concatenarConTodos (car lista) (productoPolinomico (cdr lista))))
+    )
+)
+(define (concatenarConTodos listaElementos listaDeListas)
+       (define (x elemento lista)
+           (if (null? lista) '() (cons (cons elemento (car lista)) (x elemento (cdr lista))))
+       )
+       (if (null? (cdr listaElementos))
+           (x (car listaElementos) listaDeListas)
+           (append (x (car listaElementos) listaDeListas) (concatenarConTodos (cdr listaElementos) listaDeListas))
+        )
+)
+(define (productoPolinomicoSimple lista)
+  (if (null? (car lista)) '() (append (primeralista lista) (productoPolinomicoSimple (list (cdr (car lista)) (car (cdr lista))))))
+)
+
+(define (eliminarPrimerDeUltima lista)
+     (if (not (null? (cadr lista))) (list (car lista) (cdr (cadr lista))) #f)
+)
+
+(define lista  '((1 2 3) (1 2 3)))
