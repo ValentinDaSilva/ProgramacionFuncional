@@ -11,11 +11,11 @@
 
 (define (hoja? x)
       (if (and (vacio? (cadr x)) (caddr x)) #t #f)
-  )
+)
 
 (define (aux funcion)
      funcion
-  )
+)
 
 (define (crear-arbol raiz izq der)
        (list raiz izq der)
