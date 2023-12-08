@@ -1,0 +1,46 @@
+#lang racket
+
+(define vacio '())
+(define (vacio? x) (if (equal? x vacio) #t #f))
+(define (hoja raiz) (list raiz vacio vacio))
+(define (hoja? lista) 
+    (and (vacio? (cadr lista)) (vacio? (caddr lista)))   
+)
+(define (izq arbol) (cadr arbol))
+
+(define (der arbol) (caddr arbol))
+
+(define (crear-arbol raiz izq der)
+    (list raiz izq der)
+)
+
+(define (raiz arbol) (car arbol))
+
+(define (recorridoHorizontal arbol)
+    (define (recorridoHorizontalAux listaAux) 
+        (if (pair? listaAux)
+            (append (raicesDeTodasLasListas listaAux) (recorridoHorizontalAux (hijosDeTodasLasListas listaAux)))
+            '()
+        )
+    )
+    (append (list (raiz arbol)) (recorridoHorizontalAux (list (izq arbol) (der arbol))))
+)
+
+(define (raicesDeTodasLasListas lista)
+    (if (null? lista)
+        '()
+        (cons (raiz (car lista)) (raicesDeTodasLasListas (cdr lista)))
+    )
+)
+(define (hijosDeTodasLasListas lista)
+    (cond
+        ((null? lista) '())
+        ((hoja? (car lista)) (hijosDeTodasLasListas (cdr lista)))
+        (else (append (list (izq(car lista)) (der(car lista))) (hijosDeTodasLasListas (cdr lista))))
+    )
+)
+(define arbol1 (crear-arbol 1 (hoja 2) (hoja 3)))
+(define arbol2 (crear-arbol 1 (crear-arbol 2 (hoja 4) (hoja 5)) (crear-arbol 3 (hoja 6) (hoja 7))))
+(define lista (list (crear-arbol 2 (hoja 4) (hoja 5)) (crear-arbol 3 (hoja 6) (hoja 7))))
+(define lista2 (list (hoja 1) (hoja 2) (hoja 3)))
+(define lista3 (list (hoja 3) (crear-arbol 2 (hoja 4) (hoja 5))))
