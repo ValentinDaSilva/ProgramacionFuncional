@@ -1,0 +1,33 @@
+(define (agrega-reemplaza array clave valor)
+    (define ParClaveValor (cons clave (cons valor '())))
+    (define (reemplaza array ParClaveValor)
+        (if (not (list? (car arary)))
+            (cond 
+                ((null? array) '())
+                ((not (equal? (caar array) (car ParClaveValor)))
+                    (cons (car array) (reemplaza (cdr array) ParClaveValor))
+                )
+            (else (cons ParClaveValor (reemplaza (cdr array) ParClaveValor)))
+            )
+            (cons ParClaveValor (reemplaza (cdr array) ParClaveValor))
+        )
+        
+    )
+    (if (estaEnElArray array ParClaveValor)
+        (reemplaza array ParClaveValor)
+        (append array (cons ParClaveValor '()))
+    )
+)
+
+(define (estaEnElArray array clave)
+    (if (not (list? (car arary)))
+        (cond
+            ((null? array) #f)
+            ((equal? (caar array) clave) #t)
+            (else 
+                (estaEnElArray (cdr array) clave)
+            )
+        )
+        (estaEnElArray (cdr array) clave)
+    )
+)
